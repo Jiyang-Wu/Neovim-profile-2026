@@ -10,6 +10,14 @@ vim.opt.softtabstop = 4
 vim.g.mapleader = " "
 vim.opt.smartindent = true
 vim.diagnostic.config({ virtual_text = true })
+vim.opt.clipboard = "unnamedplus"
+
+-- Cursor colors
+vim.opt.termguicolors = true
+vim.api.nvim_set_hl(0, "Cursor",       { bg = "#D679D6", fg = "#000000" })
+vim.api.nvim_set_hl(0, "CursorInsert", { bg = "#D679D6", fg = "#000000" })
+vim.api.nvim_set_hl(0, "CursorVisual", { bg = "#D679D6", fg = "#000000" })
+
 local opts = {}
 
 -- LSP related keybindings

@@ -1,0 +1,14 @@
+# OS / editor junk
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Neovim caches
+.undo/
+.backup/
+.swap/
+
+lua/local.lua
+lua/secrets.lua
+pack/

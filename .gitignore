@@ -12,3 +12,4 @@
 lua/local.lua
 lua/secrets.lua
 pack/
+*.json

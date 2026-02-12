@@ -9,9 +9,9 @@ return {
 			["<CR>"] = { "accept", "fallback" },
 			["<C-e>"] = { "scroll_documentation_down", "snippet_forward" },
 			["<C-u>"] = { "scroll_documentation_up", "snippet_backward" },
-			["<Tab>"] = { "select_next", "fallback" },
-			["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
-			["<C-n>"] = { "cancel", "fallback" },
+			["<C-n>"] = { "select_next", "fallback" },
+			["<C-p>"] = { "select_prev", "snippet_backward", "fallback" },
+			["<Tab>"] = { "cancel", "fallback" },
 		},
 
 		appearance = {

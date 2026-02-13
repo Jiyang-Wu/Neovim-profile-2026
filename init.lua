@@ -12,6 +12,14 @@ vim.opt.smartindent = true
 vim.diagnostic.config({ virtual_text = true })
 vim.opt.clipboard = "unnamedplus"
 
+
+-- Delete current buffer (normal file + terminal)
+vim.keymap.set("n", "<leader>bd", function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  vim.cmd("bp")
+  vim.api.nvim_buf_delete(bufnr, { force = true })
+end, { desc = "Delete current buffer safely" })
+
 -- Cursor colors
 vim.opt.termguicolors = true
 -- vim.api.nvim_set_hl(0, "Cursor",       { bg = "#D679D6", fg = "#000000" })
@@ -21,6 +29,23 @@ if vim.g.neovide then
 	vim.o.guifont = "FiraMono Nerd Font Mono:h15"
 end
 
+
+-- Terminal Settings
+vim.keymap.set("n", "<leader>tv", function()
+  vim.cmd("vsplit | terminal")
+end, { desc = "Open terminal in right split" })
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
+
+
+-- Treesitter highlighting setup
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
+})
+
+
+-- Empty opts by default
 local opts = {}
 
 -- LSP related keybindings

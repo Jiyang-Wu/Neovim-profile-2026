@@ -12,5 +12,17 @@ return {
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
         vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+        require("telescope").setup({
+            pickers = {
+                buffers = {
+                    mappings = {
+                        n = {
+                            ["d"] = require("telescope.actions").delete_buffer,
+                        }
+                    }
+                }
+            }
+        })
     end
 }

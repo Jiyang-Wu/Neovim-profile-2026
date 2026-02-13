@@ -4,11 +4,9 @@ return {
     build = ':TSUpdate',
     config = function()
         -- Setting up treesitter
-        local config = require("nvim-treesitter.config")
-        config.setup({
-            ensure_installed = {"lua", "javascript", "c", "cpp"},
-            highlight = {enable = true},
-            indent = {enable = true},
-        })
+        require("nvim-treesitter").install(
+            { "lua", "python", "javascript", "c", "cpp" },
+            { summary = false }
+        ):wait(3000)
     end
 }

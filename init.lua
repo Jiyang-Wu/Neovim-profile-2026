@@ -11,6 +11,7 @@ vim.g.mapleader = " "
 vim.opt.smartindent = true
 vim.diagnostic.config({ virtual_text = true })
 vim.opt.clipboard = "unnamedplus"
+vim.opt.splitright = true
 
 
 -- Delete current buffer (normal file + terminal)
@@ -31,7 +32,7 @@ end
 
 
 -- Terminal Settings
-vim.keymap.set("n", "<leader>tv", function()
+vim.keymap.set("n", "<leader>tt", function()
   vim.cmd("vsplit | terminal")
 end, { desc = "Open terminal in right split" })
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])

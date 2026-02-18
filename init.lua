@@ -3,10 +3,12 @@ require("config.lazy")
 -- Neovim basic setup
 vim.opt.number = true
 vim.opt.relativenumber = true
+
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
+
 vim.g.mapleader = " "
 vim.opt.smartindent = true
 vim.diagnostic.config({ virtual_text = true })
@@ -34,7 +36,7 @@ vim.opt.termguicolors = true
 -- vim.api.nvim_set_hl(0, "CursorInsert", { bg = "#D679D6", fg = "#000000" })
 -- vim.api.nvim_set_hl(0, "CursorVisual", { bg = "#D679D6", fg = "#000000" })
 if vim.g.neovide then
-	vim.o.guifont = "FiraMono Nerd Font Mono:h15"
+	vim.o.guifont = "JetBrainsMonoNL Nerd Font:h15"
 end
 
 

@@ -20,6 +20,13 @@ vim.keymap.set("n", "<leader>bd", function()
   vim.cmd("bp")
   vim.api.nvim_buf_delete(bufnr, { force = true })
 end, { desc = "Delete current buffer safely" })
+-- Delete current buffer and quit window
+vim.keymap.set("n", "<leader>bq", function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  vim.cmd("bp")
+  vim.api.nvim_buf_delete(bufnr, { force = true })
+  vim.cmd("close")
+end, { desc = "Delete current buffer safely" })
 
 -- Cursor colors
 vim.opt.termguicolors = true

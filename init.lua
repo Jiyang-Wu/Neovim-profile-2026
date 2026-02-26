@@ -15,6 +15,9 @@ vim.diagnostic.config({ virtual_text = true })
 vim.opt.clipboard = "unnamedplus"
 vim.opt.splitright = true
 
+-- Setting up default color scheme
+vim.o.background = "dark"
+vim.cmd.colorscheme("gruber-darker")
 
 -- Delete current buffer (normal file + terminal)
 vim.keymap.set("n", "<leader>bd", function()

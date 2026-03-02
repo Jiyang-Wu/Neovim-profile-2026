@@ -14,23 +14,29 @@ vim.opt.smartindent = true
 vim.diagnostic.config({ virtual_text = true })
 vim.opt.clipboard = "unnamedplus"
 vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Setting up default color scheme
 vim.o.background = "dark"
 vim.cmd.colorscheme("gruber-darker")
+require("lualine").setup({
+	options = {
+		theme = "gruvbox",
+	},
+})
 
 -- Delete current buffer (normal file + terminal)
 vim.keymap.set("n", "<leader>bd", function()
-  local bufnr = vim.api.nvim_get_current_buf()
-  vim.cmd("bp")
-  vim.api.nvim_buf_delete(bufnr, { force = true })
+	local bufnr = vim.api.nvim_get_current_buf()
+	vim.cmd("bp")
+	vim.api.nvim_buf_delete(bufnr, { force = true })
 end, { desc = "Delete current buffer safely" })
 -- Delete current buffer and quit window
 vim.keymap.set("n", "<leader>bq", function()
-  local bufnr = vim.api.nvim_get_current_buf()
-  vim.cmd("bp")
-  vim.api.nvim_buf_delete(bufnr, { force = true })
-  vim.cmd("close")
+	local bufnr = vim.api.nvim_get_current_buf()
+	vim.cmd("bp")
+	vim.api.nvim_buf_delete(bufnr, { force = true })
+	vim.cmd("close")
 end, { desc = "Delete current buffer safely" })
 
 -- Cursor colors
@@ -42,21 +48,21 @@ if vim.g.neovide then
 	vim.o.guifont = "JetBrainsMonoNL Nerd Font:h15"
 end
 
-
 -- Terminal Settings
 vim.keymap.set("n", "<leader>tt", function()
-  vim.cmd("vsplit | terminal")
+	vim.cmd("vsplit | terminal")
 end, { desc = "Open terminal in right split" })
+vim.keymap.set("n", "<leader>th", function()
+	vim.cmd("split | terminal")
+end, { desc = "Open terminal in below split" })
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
-
 
 -- Treesitter highlighting setup
 vim.api.nvim_create_autocmd("BufReadPost", {
-  callback = function(args)
-    pcall(vim.treesitter.start, args.buf)
-  end,
+	callback = function(args)
+		pcall(vim.treesitter.start, args.buf)
+	end,
 })
-
 
 -- Empty opts by default
 local opts = {}

@@ -45,7 +45,7 @@ vim.opt.termguicolors = true
 -- vim.api.nvim_set_hl(0, "CursorInsert", { bg = "#D679D6", fg = "#000000" })
 -- vim.api.nvim_set_hl(0, "CursorVisual", { bg = "#D679D6", fg = "#000000" })
 if vim.g.neovide then
-	vim.o.guifont = "JetBrainsMonoNL Nerd Font:h15"
+	vim.o.guifont = "Iosevka Nerd Font:h16"
 end
 
 -- Terminal Settings

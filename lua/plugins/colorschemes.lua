@@ -96,4 +96,15 @@ return {
 			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("kanagawa").setup({
+				commmentStyle = { italic = false },
+				keywordStyle = { italic = false },
+			})
+		end,
+	},
 }

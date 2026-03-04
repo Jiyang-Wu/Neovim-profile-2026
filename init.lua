@@ -18,10 +18,10 @@ vim.opt.splitbelow = true
 
 -- Setting up default color scheme
 vim.o.background = "dark"
-vim.cmd.colorscheme("gruber-darker")
+vim.cmd.colorscheme("kanagawa")
 require("lualine").setup({
 	options = {
-		theme = "gruvbox",
+		theme = "kanagawa",
 	},
 })
 

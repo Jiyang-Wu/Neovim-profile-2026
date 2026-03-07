@@ -3,6 +3,7 @@ require("config.lazy")
 -- Neovim basic setup
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.hlsearch = false
 
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
@@ -45,7 +46,7 @@ vim.opt.termguicolors = true
 -- vim.api.nvim_set_hl(0, "CursorInsert", { bg = "#D679D6", fg = "#000000" })
 -- vim.api.nvim_set_hl(0, "CursorVisual", { bg = "#D679D6", fg = "#000000" })
 if vim.g.neovide then
-	vim.o.guifont = "Iosevka Nerd Font:h16"
+	vim.o.guifont = "JetBrainsMonoNL Nerd Font:h16"
 end
 
 -- Terminal Settings
@@ -108,3 +109,6 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 vim.keymap.set("n", "<leader>f", function()
 	vim.lsp.buf.format({ async = true })
 end, opts)
+
+-- Select entire file
+vim.keymap.set("n", "<leader>va", "ggVG")

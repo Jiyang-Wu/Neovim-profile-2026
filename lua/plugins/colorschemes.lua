@@ -102,8 +102,10 @@ return {
 		priority = 1000,
 		config = function()
 			require("kanagawa").setup({
-				commmentStyle = { italic = false },
+				commentStyle = { italic = false },
+				functionStyle = {},
 				keywordStyle = { italic = false },
+				statementStyle = { bold = false },
 			})
 		end,
 	},

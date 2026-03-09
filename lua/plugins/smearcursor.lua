@@ -1,6 +1,6 @@
 return {
 	"sphamba/smear-cursor.nvim",
-    enabled = false,
+    enabled = true,
 	opts = {
 		-- Smear cursor when switching buffers or windows.
 		smear_between_buffers = true,
@@ -21,14 +21,9 @@ return {
 		-- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
 		smear_insert_mode = true,
 
-		stiffness = 0.5,
-		trailing_stiffness = 0.3,
-		trailing_exponent = 4,
-		damping = 0.6,
-		gradient_exponent = 0,
-		gamma = 1,
-		never_draw_over_target = true, -- if you want to actually see under the cursor
-		hide_target_hack = true, -- same
+		stiffness = 0.6,
+		trailing_stiffness = 0.5,
+        distance_stop_animating = 0.3,
 		--  Cursor Animation Setup
 	},
 }

@@ -21,9 +21,9 @@ return {
 		-- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
 		smear_insert_mode = true,
 
-		stiffness = 0.6,
+		stiffness = 0.8,
 		trailing_stiffness = 0.5,
-        distance_stop_animating = 0.3,
+        distance_stop_animating = 0.5,
 		--  Cursor Animation Setup
 	},
 }

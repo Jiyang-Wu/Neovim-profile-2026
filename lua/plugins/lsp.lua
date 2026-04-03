@@ -1,3 +1,4 @@
+-- Check Steps to add a lsp (search for "Step")
 return {
 	{
 		"mason-org/mason.nvim",
@@ -14,6 +15,7 @@ return {
 			"neovim/nvim-lspconfig",
 		},
 		opts = {
+            -- Step 1: ensure lsp is installed here
 			ensure_installed = { "lua_ls", "clangd", "pyright", "rust_analyzer" },
 			automatic_installation = true,
 		},
@@ -60,6 +62,7 @@ return {
 				end,
 			})
 
+            -- Step 2: Add LSP specific config over here, just look up config online, and paste here so the specific LSP is properly configured
 			vim.lsp.config("lua_ls", {
 				capabilities = caps,
 				settings = {
@@ -82,6 +85,7 @@ return {
 				capabilities = caps,
 			})
 
+            -- Step 3: Enable the LSP here, so they can be properly attached on every file/buffer
 			vim.lsp.enable({ "lua_ls", "clangd", "pyright", "rust_analyzer" })
 		end,
 	},

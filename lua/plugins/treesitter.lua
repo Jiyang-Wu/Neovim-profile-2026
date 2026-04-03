@@ -5,8 +5,7 @@ return {
     config = function()
         -- Setting up treesitter
         require("nvim-treesitter").install(
-            { "lua", "python", "javascript", "c", "cpp" },
-            { summary = false }
+            { "lua", "python", "javascript", "c", "cpp" }
         ):wait(3000)
     end
 }
